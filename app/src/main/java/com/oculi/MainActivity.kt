@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
         if (bluetoothAdapter == null) {
-            Toast.makeText(this.applicationContext, "fodeu", Toast.LENGTH_LONG).show()
+            Toast.makeText(this.applicationContext, "Error getting bluetooth adapter", Toast.LENGTH_LONG).show()
             return
         }
         if (!bluetoothAdapter?.isEnabled) {
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
                     while(true) {
 
                         val msg = reader.readLine()
-                        //Log.println(Log.INFO, "aaa", msg)
+                        //Log.println(Log.INFO, "aaa", "received_msg " + msg)
                         if(msg == "END_IMAGE"){
                             break
                         }
@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-//                socket.outputStream.write("HUE HUE BR BR\n".toByteArray())
+//                socket.outputStream.write("something\n".toByteArray())
             }
         }
 
